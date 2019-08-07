@@ -23,4 +23,5 @@ Route::middleware(['auth'])->group(function()
     Route::resource('surveyors', 'SurveyorController');
     Route::resource('villages', 'VillageController');
     Route::resource('surveys', 'SurveyController');
+    Route::resource('users', 'UserController');
  });
