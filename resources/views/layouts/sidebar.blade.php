@@ -55,11 +55,6 @@
                                         <span class="sub-item">Backend</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="{{ ('/') }}" target="_blank">
-                                        <span class="sub-item">Frontend</span>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </li>
@@ -80,30 +75,18 @@
                         <div class="collapse" id="base">
                             <ul class="nav nav-collapse">
                                 <li>
-                                 
-                                    <a href="#">
-                                        <span class="sub-item">Users</span>
-                                    </a>
-                               
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="sub-item">Posts</span>
+                                    <a href="/surveys">
+                                        <span class="sub-item">Data Survei</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <span class="sub-item">Categories</span>
+                                    <a href="/surveyors">
+                                        <span class="sub-item">Data Surveyors</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <span class="sub-item">Tags</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="sub-item">Trashed Post</span>
+                                    <a href="/villages">
+                                        <span class="sub-item">Data Kelurahan</span>
                                     </a>
                                 </li>
                             </ul>
@@ -113,6 +96,7 @@
             </div>
         </div>
     </div>
+
     <!-- End Sidebar -->
 
     
