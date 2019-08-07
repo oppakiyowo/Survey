@@ -15,7 +15,10 @@ class CreateSurveysTable extends Migration
     {
         Schema::create('surveys', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
             $table->date('tanggal_survey');
+            $table->integer('surveyor_id');
+            $table->integer('village_id');
             $table->integer('pindah');
             $table->integer('meninggal');
             $table->integer('tidak_diketahui');
