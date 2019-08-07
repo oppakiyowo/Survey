@@ -1,31 +1,6 @@
+@extends ('layouts.backend')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Login</title>
-	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="{{ asset('assets/img/icon.ico') }}" type="image/x-icon"/>
-
-	<!-- Fonts and icons -->
-	<script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
-	
-
-	<script>
-		WebFont.load({
-			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
-			active: function() {
-				sessionStorage.fonts = true;
-			}
-		});
-	</script>
-	 
-	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/atlantis.css') }}">
-
-	
-</head>
+@section ('content')
 <body class="login">
 	<div class="wrapper wrapper-login wrapper-login-full p-0">
 		<div class="login-aside w-50 d-flex flex-column align-items-center justify-content-center text-center bg-secondary-gradient">
@@ -36,15 +11,33 @@
 			<div class="container container-login container-transparent animated fadeIn">
 				<h3 class="text-center">Sign In To Admin</h3>
 				<div class="login-form">
+					<form method="POST" action="{{ route('login') }}">
+							@csrf
 					<div class="form-group">
-						<label for="username" class="placeholder"><b>Username</b></label>
-						<input id="username" name="username" type="text" class="form-control" required>
+						<label for="email">{{ __('E-Mail Address') }}</label>
+						<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+						@error('email')
+							<span class="invalid-feedback" role="alert">
+								<strong>{{ $message }}</strong>
+							</span>
+						@enderror
 					</div>
 					<div class="form-group">
-						<label for="password" class="placeholder"><b>Password</b></label>
-						<a href="#" class="link float-right">Forget Password ?</a>
+							<label for="password">{{ __('Password') }}</label>
+						@if (Route::has('password.request'))
+						<a class="link float-right "href="{{ route('password.request') }}">
+							{{ __('Forgot Your Password?') }}
+						</a>
+					@endif
 						<div class="position-relative">
-							<input id="password" name="password" type="password" class="form-control" required>
+							<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 							<div class="show-password">
 								<i class="icon-eye"></i>
 							</div>
@@ -52,18 +45,22 @@
 					</div>
 					<div class="form-group form-action-d-flex mb-3">
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="rememberme">
+							<input type="checkbox" class="custom-control-input" id="rememberme" {{ old('remember') ? 'checked' : '' }}>
 							<label class="custom-control-label m-0" for="rememberme">Remember Me</label>
 						</div>
-						<a href="#" class="btn btn-secondary col-md-5 float-right mt-3 mt-sm-0 fw-bold">Sign In</a>
+						<button type="submit" class="btn btn-primary">
+								{{ __('Login') }}
+							</button>
 					</div>
+				
 					<div class="login-account">
 						<span class="msg">Don't have an account yet ?</span>
-						<a href="#" id="show-signup" class="link">Sign Up</a>
+						<a href="/register" id="show-signup" class="link">Sign Up</a>
 					</div>
+
 				</div>
 			</div>
-
+		</form>
 			<div class="container container-signup container-transparent animated fadeIn">
 				<h3 class="text-center">Sign Up</h3>
 				<div class="login-form">
@@ -112,10 +109,4 @@
 		</div>
 	</div>
 
-	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="../assets/js/core/popper.min.js"></script>
-	<script src="../assets/js/core/bootstrap.min.js"></script>
-	<script src="../assets/js/atlantis.min.js"></script>
-</body>
-</html>
+@endsection
