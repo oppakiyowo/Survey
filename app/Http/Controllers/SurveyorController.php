@@ -13,7 +13,7 @@ class SurveyorController extends Controller
      */
     public function index()
     {
-        //
+        return view ('surveyor.index');
     }
 
     /**
