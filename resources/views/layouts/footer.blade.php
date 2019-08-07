@@ -19,16 +19,12 @@
 <script src="{{ asset('assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js') }}"></script>
 <!-- Chart Circle -->
 <script src="{{ asset('assets/js/plugin/chart-circle/circles.min.js') }}"></script>
-{{-- <script src="{{ asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script> --}}
 <!-- jQuery Vector Maps -->
 <script src="{{ asset('assets/js/plugin/jqvmap/jquery.vmap.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugin/jqvmap/maps/jquery.vmap.world.js') }}"></script>
-
 <!-- Atlantis JS -->
 <script src="{{ asset('assets/js/atlantis.min.js') }}"></script>
-<!-- Atlantis DEMO methods, don't include it in your project! -->
-{{-- <script src="{{ asset('assets/js/setting-demo.js') }}"></script>
-<script src="{{ asset('assets/js/demo.js') }}"></script> --}}
+
 
 
 

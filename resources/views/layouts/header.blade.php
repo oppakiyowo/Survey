@@ -25,7 +25,6 @@
 	 <link  href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 	 <script src="{{ asset('js/toastr.min.js') }}"></script>
 	<!-- CSS Files -->
-	<link  href="{{ asset('css/trix.css') }}" rel="stylesheet">
 	<link  href="{{ asset('assets/css/fonts.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/flatpicker.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
