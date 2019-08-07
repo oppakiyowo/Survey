@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('surveyors', 'SurveyorController');
+Route::resource('Villages', 'VillageController');
+Route::resource('Surveys', 'SurveyController'); 
