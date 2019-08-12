@@ -89,6 +89,11 @@
                                         <span class="sub-item">Data Kelurahan</span>
                                     </a>
                                 </li>
+                                <li>
+                                        <a href="/users">
+                                            <span class="sub-item">Data Users</span>
+                                        </a>
+                                    </li>
                             </ul>
                         </div>
                     </li>
