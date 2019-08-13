@@ -59,7 +59,7 @@
                                 <tr>
                                     <td> {{ $no++ }} </td>
                                     <td> {{$surveyor->name}} </td>
-                                    <td> <a href="https://api.whatsapp.com/send?phone={{$surveyor->kontak}}&text=Halo"> +{{$surveyor->kontak}} </a> </td>
+                                    <td><a href="https://api.whatsapp.com/send?phone={{$surveyor->kontak}}&text=Halo"> <i class="fab fa-whatsapp"> </i> +{{$surveyor->kontak}} </a> </td>
                                
                                     <td>  
                                         <div class="form-button-action">
