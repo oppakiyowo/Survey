@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Village;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\village\CreateVillagesRequest ;
+use App\Http\Requests\village\UpdateVillagesRequest ;
 class VillageController extends Controller
 {
     /**
@@ -13,7 +14,7 @@ class VillageController extends Controller
      */
     public function index()
     {
-        return view('village.index');
+        return view('village.index')->with('villages',Village::all());
     }
 
     /**
@@ -32,9 +33,16 @@ class VillageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateVillagesRequest $request)
     {
-        //
+        Village::create([
+            'name'=>$request->name,
+            'code' => $request->code,
+            'total_penduduk' => $request->total_penduduk
+        ]);
+
+        session()->flash('success', 'Data kelurahan berhasil di Tambah');
+        return redirect(route('villages.index'));
     }
 
     /**
@@ -66,9 +74,13 @@ class VillageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateVillagesRequest $request, Village $village)
     {
-        //
+        $village=Village::findOrFail($request->catid);
+        $village->update($request->all());
+       
+        session()->flash('success', 'Data Kelurahan berhasil di ubah');
+        return redirect(route('villages.index'));
     }
 
     /**
@@ -77,8 +89,17 @@ class VillageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Village $village)
     {
-        //
-    }
+        if ($village->surveys->count() >0)
+        {
+            session()->flash('error', 'Tidak bisa di hapus, Ada post yang menggunakan Kategori ini');
+            return redirect()->back();
+        }
+        $village->delete();
+
+        session()->flash('success', 'Data Kelurahan Berhasil Di hapus');
+        return redirect(route('villages.index'));
+    }        
+    
 }
