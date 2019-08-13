@@ -59,7 +59,8 @@
                                 <tr>
                                     <td> {{ $no++ }} </td>
                                     <td> {{$surveyor->name}} </td>
-                                    <td> +{{$surveyor->kontak}} </td>
+                                    <td> <a href="https://api.whatsapp.com/send?phone={{$surveyor->kontak}}&text=Halo"> +{{$surveyor->kontak}} </a> </td>
+                               
                                     <td>  
                                         <div class="form-button-action">
                                                 <a href="#editSurveyor" 
