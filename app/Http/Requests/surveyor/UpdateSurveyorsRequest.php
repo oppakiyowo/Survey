@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\surveyor;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateSurveyorsRequest extends FormRequest
+class UpdateSurveyorsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class CreateSurveyorsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:20|',
-            
+            'name' => 'required|max:20|unique:surveyors,name,' .$this->surveyor['id'],
+            'kontak' => 'required|max:14|unique:surveyors,kontak,' .$this->surveyor['id']
         ];
     }
 }

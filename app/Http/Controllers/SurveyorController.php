@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Surveyor;
-use App\Http\Requests\CreateSurveyorsRequest ;
-use App\Http\Requests\UpdateSurveyorsRequest ;
+use App\Http\Requests\surveyor\CreateSurveyorsRequest ;
+use App\Http\Requests\surveyor\UpdateSurveyorsRequest ;
+
 class SurveyorController extends Controller
 {
     /**
