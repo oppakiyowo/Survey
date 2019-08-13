@@ -75,27 +75,37 @@
                         <div class="collapse" id="base">
                             <ul class="nav nav-collapse">
                                 <li>
-                                    <a href="/surveys">
+                                    <a href="">
                                         <span class="sub-item">Data Survei</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="/surveyors">
-                                        <span class="sub-item">Data Surveyors</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/villages">
-                                        <span class="sub-item">Data Kelurahan</span>
-                                    </a>
-                                </li>
-                                <li>
-                                        <a href="/users">
-                                            <span class="sub-item">Data Users</span>
-                                        </a>
-                                    </li>
                             </ul>
                         </div>
+                        <li class="nav-item">
+                                <a href="/surveys">
+                                <i class="fas fa-copy"></i>
+                                    <p>Data Survei</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                    <a href="/surveyors">
+                                    <i class="fas fa-user-friends"></i>
+                                        <p>Data Surveyors</p>
+                                    </a>
+                                </li>
+                            <li class="nav-item">
+                                    <a href="/villages">
+                                    <i class="fas fa-university"></i>
+                                        <p>Data Kelurahan</p>
+                                    </a>
+                                </li>
+                            <li class="nav-item">
+                                <a href="/users">
+                                    <i class="fas fa-user"></i>
+                                    <p>Data Pengguna</p>
+                                </a>
+                            </li>    
                     </li>
                 </ul>
             </div>
