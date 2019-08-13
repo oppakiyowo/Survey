@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\surveyor;
+namespace App\Http\Requests\village;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateSurveyorsRequest extends FormRequest
+class CreateVillagesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,10 @@ class CreateSurveyorsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:30|',
-            'kontak' => 'required|integer|unique:surveyors',
+            'name' => 'required|max:30|unique:villages',
+            'code' => 'required|numeric|between:0,999999',
+            'total_penduduk' => 'required|integer'
+
         ];
     }
 }
