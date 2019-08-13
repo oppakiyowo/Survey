@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Surveyor;
+use App\Http\Requests\CreateSurveyorsRequest ;
+use App\Http\Requests\UpdateSurveyorsRequest ;
 class SurveyorController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class SurveyorController extends Controller
      */
     public function index()
     {
-        return view ('surveyor.index');
+        
+        return view ('surveyor.index')->with('surveyors',Surveyor::all());
     }
 
     /**
@@ -23,7 +26,7 @@ class SurveyorController extends Controller
      */
     public function create()
     {
-        //
+        return view('errors.404');
     }
 
     /**
@@ -32,9 +35,16 @@ class SurveyorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateSurveyorsRequest  $request)
     {
-        //
+       
+        Surveyor::create([
+            'name'=>$request->name,
+            'kontak' => $request->kontak
+        ]);
+
+        session()->flash('success', 'Data Surveyors berhasil di Tambah');
+        return redirect(route('surveyors.index'));
     }
 
     /**
@@ -66,9 +76,13 @@ class SurveyorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateSurveyorsRequest $request, Surveyor $surveyor)
     {
-        //
+        $surveyor=Surveyor::findOrFail($request->catid);
+        $surveyor->update($request->all());
+       
+        session()->flash('success', 'Data surveyor berhasil di ubah');
+        return redirect(route('surveyors.index'));
     }
 
     /**
@@ -77,8 +91,17 @@ class SurveyorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Surveyor $surveyor)
     {
-        //
-    }
+        if ($surveyor->surveys->count() >0)
+        {
+            session()->flash('error', 'Tidak bisa di hapus, Ada post yang menggunakan Kategori ini');
+            return redirect()->back();
+        }
+        $surveyor->delete();
+
+        session()->flash('success', 'Data Surveyor Berhasil Di hapus');
+        return redirect(route('surveyors.index'));
+    }        
+    
 }
