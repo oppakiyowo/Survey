@@ -25,7 +25,7 @@ class UpdateSurveyorsRequest extends FormRequest
     {
         return [
             'name' => 'required|max:20|unique:surveyors,name,' .$this->surveyor['id'],
-            'kontak' => 'required|max:20|unique:surveyors,kontak,' .$this->surveyor['id']
+            'kontak' => 'required|max:14|unique:surveyors,kontak,' .$this->surveyor['id']
         ];
     }
 }
