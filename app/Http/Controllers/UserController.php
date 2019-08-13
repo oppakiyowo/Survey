@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Http\Requests\user\CreateUsersRequest;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
@@ -32,9 +34,16 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateUsersRequest $request)
     {
-        //
+        User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>Hash::make($request->password),
+        ]);
+
+        session()->flash('success', 'users berhasil di tambah');
+        return redirect(route('users.index'));
     }
 
     /**
@@ -43,9 +52,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return view('users.show')->with('users', User::all());
     }
 
     /**
@@ -77,8 +86,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        if ($user->id == 1) {
+            session()->flash('error', 'User ini Tidak bisa di Hapus');
+            return redirect()->route('users.index');
+        }
+        
+        
+        $user->delete();
+
+        session()->flash('success', 'User berhasil di hapus');
+        return redirect(route('users.index'));
     }
+
 }
