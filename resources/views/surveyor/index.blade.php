@@ -39,9 +39,54 @@
                             Tambah Surveyor
                         </button>
                     </div>
+                    {{-- add surveyor modal --}}
+<div class="modal fade" id="addSurveyor" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <form action="{{ route('surveyors.store') }}" method="POST">
+                @csrf
+                @method('POST')
+            <div class="modal-content">
+                <div class="modal-header no-bd">
+                    <h5 class="modal-title">
+                        <span class="fw-mediumbold">
+                        Tambah Data</span> 
+                        <span class="fw-light">
+                            Surveyor
+                        </span>
+                    </h5> 
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default">
+                                <label>Nama Surveyor</label>
+                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"  />
+                            </div>
+                           
+    
+                            <div class="form-group form-group-default">
+                                <label>Nomor Handphone</label>
+                                <input type ="integer" class="number @error('kontak') is-invalid @enderror" name="kontak" value="+62" />
+                            
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                <div class="modal-footer no-bd">
+                    <button type="submit"  class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    {{-- end of add surveyor modal --}}
                 </div>
                 <div class="card-body">
-                    
+                 @if($surveyors->count()>0)
                     <div class="table-responsive">
                         <table id="add-row" class="display table table-striped table-hover">
                             <thead>
@@ -82,19 +127,7 @@
                                             </div> 
                                     </td>
                                 </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div> 
-
-
-{{-- edit modal --}}
+                                {{-- edit modal --}}
 <div class="modal fade" id="editSurveyor" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <form action="{{ route('surveyors.update', $surveyor->id) }}" data-remote="true" method="POST">
@@ -141,57 +174,6 @@
     </div>
 </div>
 {{-- end of edit modal --}}  
-
-{{-- add surveyor modal --}}
-<div class="modal fade" id="addSurveyor" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-    <form action="{{ route('surveyors.store') }}" method="POST">
-            @csrf
-            @method('POST')
-        <div class="modal-content">
-            <div class="modal-header no-bd">
-                <h5 class="modal-title">
-                    <span class="fw-mediumbold">
-                    Tambah Data</span> 
-                    <span class="fw-light">
-                        Surveyor
-                    </span>
-                </h5> 
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="form-group form-group-default">
-                            <label>Nama Surveyor</label>
-                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"  />
-                        </div>
-                       
-
-                        <div class="form-group form-group-default">
-                            <label>Nomor Handphone</label>
-                            <input type ="integer" class="number @error('kontak') is-invalid @enderror" name="kontak" value="+62" />
-                        
-                        </div>
-                       
-                        
-                       
-
-                    </div>
-                </div>
-                </div>
-            <div class="modal-footer no-bd">
-                <button type="submit"  class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </form>
-            </div>
-        </div>
-    </div>
-    </div>
-{{-- end of add surveyor modal --}}
-
 <!-- delete Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
     aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -219,6 +201,22 @@
         </div>
     </div>
 </div>
+<!-- end delete Modal -->
+                            @endforeach
+                            </tbody>
+                            @else
+                            <h3 class="text-center">Belum Ada Data Surveyors</h3>
+                            @endif
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div> 
+
+
 
 @endsection
         
