@@ -94,6 +94,7 @@
                                     <th width="4px">NO</th>
                                     <th>Nama</th>
                                     <th>Kontak</th>
+                                    <th>Total Survey</th>
                                     <th width="6px">Action</th>
                                 </tr>
                             </thead>
@@ -105,7 +106,7 @@
                                     <td> {{ $no++ }} </td>
                                     <td> {{$surveyor->name}} </td>
                                     <td><a href="https://api.whatsapp.com/send?phone={{$surveyor->kontak}}&text=Halo"> <i class="fab fa-whatsapp"> </i> +{{$surveyor->kontak}} </a> </td>
-                               
+                                    <td> {{$surveyor->surveys->count() }}</td>
                                     <td>  
                                         <div class="form-button-action">
                                                 <a href="#editSurveyor" 
