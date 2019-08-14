@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRtToSurveys extends Migration
+class AddRwToSurveys extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddRtToSurveys extends Migration
     public function up()
     {
         Schema::table('surveys', function (Blueprint $table) {
-            $table->char('rt');
+            $table->char('rw');
         });
     }
 
@@ -26,7 +26,7 @@ class AddRtToSurveys extends Migration
     public function down()
     {
         Schema::table('surveys', function (Blueprint $table) {
-          
+           
         });
     }
 }
