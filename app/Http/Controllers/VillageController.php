@@ -93,7 +93,7 @@ class VillageController extends Controller
     {
         if ($village->surveys->count() >0)
         {
-            session()->flash('error', 'Tidak bisa di hapus, Ada post yang menggunakan Kategori ini');
+            session()->flash('error', 'Tidak bisa di hapus, Ada data survey yang menggunakan kelurahan ini');
             return redirect()->back();
         }
         $village->delete();

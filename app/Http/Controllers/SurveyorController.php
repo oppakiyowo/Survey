@@ -96,7 +96,7 @@ class SurveyorController extends Controller
     {
         if ($surveyor->surveys->count() >0)
         {
-            session()->flash('error', 'Tidak bisa di hapus, Ada post yang menggunakan Kategori ini');
+            session()->flash('error', 'Tidak bisa di hapus, Ada Data survey yang menggunakan surveyor ini');
             return redirect()->back();
         }
         $surveyor->delete();
