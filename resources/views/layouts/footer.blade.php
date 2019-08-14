@@ -49,11 +49,18 @@
 <!-- Atlantis JS -->
 <script src="{{ asset('assets/js/atlantis.min.js') }}"></script>
 
-
-
-
-
-
+<script src="{{ asset('js/flatpicker.js') }}"></script>
+{{-- package select2 for category and flatpicker for date & time --}}
+<script>
+        flatpickr('#published_at',{
+        enableTime: true,
+        enableSeconds: true
+        })
+    
+        $(document).ready(function() {
+            $('.tags-selector').select2();
+        });
+    </script>
 <script>
 Circles.create({
     id:'circles-1',
