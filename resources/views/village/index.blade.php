@@ -208,6 +208,13 @@
 <!-- end delete Modal -->
                             @endforeach
                             </tbody>
+                            <tfoot>
+                                    <tr>
+                                        <th colspan="2">TOTAL</th>
+                                        <th> {{ number_format( $village->sum('total_penduduk')) }}</th>
+                                        
+                                    </tr>
+                                </tfoot>
                         </table>
                         @else
                         <h3 class="text-center">Belum ada Data Kelurahan </h3>
