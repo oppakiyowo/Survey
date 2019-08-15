@@ -55,23 +55,7 @@
                                             @enderror
                                         </div>
 
-                                        <div class="form-group">
-                                                <label for="surveyor">Nama Surveyor  <span class="required-label">*</span> </label>
-                                                <select name="surveyor_id" id="surveyor_id" class="form-control  @error('surveyor_id') is-invalid @enderror"> 
-                                                    @foreach($surveyors as $surveyor)
-                                                    <option value="{{ old('surveyor') }} {{ $surveyor->id }}" 
-                                                            @if($surveyor->id == $survey->surveyor_id)
-                                                            selected
-                                                            @endif
-                                                        > 
-                                                    {{ $surveyor->name }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                                @error('surveyor_id')
-                                                <td><p class="text-danger">{{$message}}</p></td>
-                                                @enderror
-                                        </div>
+                                       
 
                                         <div class="form-group">
                                                 <label for="rt">RT <span class="required-label">*</span></label>
@@ -99,12 +83,6 @@
                                         </div>		
 
                                         <div class="form-group">
-                                                <label for="ganda">Ganda</label>
-                                                <input type="number" name="ganda" class="form-control" id="ganda" value="{{ $survey->ganda }}">
-                                                <small id="ganda" class="form-text text-muted">Isi dengan jumlah penduduk data ganda.</small>
-                                        </div>
-
-                                        <div class="form-group">
                                                 <label for="meniggal">Meninggal</label>
                                                 <input type="number" name="meninggal" class="form-control" id="meninggal" value="{{ $survey->meninggal }}">
                                                 <small id="meningga" class="form-text text-muted">Isi dengan jumlah penduduk yang meninggal.</small>
@@ -115,6 +93,12 @@
                                                 <input type="number" name="tidak_diketahui" class="form-control" id="tidak_diketahui" value="{{ $survey->tidak_diketahui }}">
                                                 <small id="tidak_diketahui" class="form-text text-muted">Isi dengan jumlah penduduk tanpa keterangan.</small>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="ganda">Ganda</label>
+                                            <input type="number" name="ganda" class="form-control" id="ganda" value="{{ $survey->ganda }}">
+                                            <small id="ganda" class="form-text text-muted">Isi dengan jumlah penduduk data ganda.</small>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -123,6 +107,25 @@
                     </div>
     <div class="col-6 col-md-4">
                 <div class="card">
+
+                    <div class="form-group">
+                            <label for="surveyor">Nama Surveyor  <span class="required-label">*</span> </label>
+                            <select name="surveyor_id" id="surveyor_id" class="form-control  @error('surveyor_id') is-invalid @enderror"> 
+                                @foreach($surveyors as $surveyor)
+                                <option value="{{ old('surveyor') }} {{ $surveyor->id }}" 
+                                        @if($surveyor->id == $survey->surveyor_id)
+                                        selected
+                                        @endif
+                                    > 
+                                {{ $surveyor->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('surveyor_id')
+                            <td><p class="text-danger">{{$message}}</p></td>
+                            @enderror
+                    </div>
+                    
                     <div class="card-body">
                         <div class="form-group">
                                 <label for="tanggal_survey">Tanggal Survey</label>

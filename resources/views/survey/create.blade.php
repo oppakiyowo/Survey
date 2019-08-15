@@ -48,18 +48,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                                <label for="surveyor">Nama Surveyor  <span class="required-label">*</span> </label>
-                                                <select name="surveyor" id="surveyor" class="form-control"> 
-                                                    @foreach($surveyors as $surveyor)
-                                                    <option value="{{ old('surveyor') }} {{ $surveyor->id }}" 
-                                                        
-                                                        > 
-                                                    {{ $surveyor->name }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                        </div>
+                                        
                                         <div class="form-group">
                                                 <label for="rt">RT <span class="required-label">*</span></label>
                                                 <input type="text" name="rt" class="form-control  @error('rt') is-invalid @enderror" id="rt">
@@ -86,12 +75,6 @@
                                         </div>		
 
                                         <div class="form-group">
-                                                <label for="ganda">Ganda</label>
-                                                <input type="text" name="ganda" class="form-control" id="ganda">
-                                                <small id="ganda" class="form-text text-muted">Isi dengan jumlah penduduk data ganda.</small>
-                                        </div>
-
-                                        <div class="form-group">
                                                 <label for="meniggal">Meninggal</label>
                                                 <input type="text" name="meninggal" class="form-control" id="meninggal">
                                                 <small id="meningga" class="form-text text-muted">Isi dengan jumlah penduduk yang meninggal.</small>
@@ -102,6 +85,12 @@
                                                 <input type="text" name="tidak_diketahui" class="form-control" id="tidak_diketahui">
                                                 <small id="tidak_diketahui" class="form-text text-muted">Isi dengan jumlah penduduk tanpa keterangan.</small>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="ganda">Ganda</label>
+                                            <input type="text" name="ganda" class="form-control" id="ganda">
+                                            <small id="ganda" class="form-text text-muted">Isi dengan jumlah penduduk data ganda.</small>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -111,6 +100,18 @@
     <div class="col-6 col-md-4">
                 <div class="card">
                     <div class="card-body">
+                        <div class="form-group">
+                                <label for="surveyor">Nama Surveyor  <span class="required-label">*</span> </label>
+                                <select name="surveyor" id="surveyor" class="form-control"> 
+                                    @foreach($surveyors as $surveyor)
+                                    <option value="{{ old('surveyor') }} {{ $surveyor->id }}" 
+                                        
+                                        > 
+                                    {{ $surveyor->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                        </div>
                         <div class="form-group">
                             <label for="tanggal_survey ">Tanggal Survey <span class="required-label">*</span></label>
                             <input type="date" class="form-control  @error('rw') is-invalid @enderror" name="tanggal_survey" id="published_at" value="{{ old('tanggal_survey') }}">

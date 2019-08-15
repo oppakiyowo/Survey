@@ -88,6 +88,21 @@
                                 </tr>
                                 @endforeach
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="5">TOTAL ANOMALI</th>
+                                    <th> {{ number_format( $survey->sum('pindah')) }}</th>
+                                    <th> {{ number_format( $survey->sum('meninggal')) }}</th>
+                                    <th> {{ number_format( $survey->sum('tidak_diketahui')) }}</th>
+                                    <th> {{ number_format( $survey->sum('ganda')) }}</th>
+                                    <th> {{ $total_anomali= $survey->sum('pindah') +
+                                                              $survey->sum('meninggal') +
+                                                              $survey->sum('tidak_diketahui') +
+                                                                 $survey->sum('ganda') 
+
+                                    }}</th>
+                                </tr>
+                                </tfoot>
                         </table>
                     </div>
                 </div>
