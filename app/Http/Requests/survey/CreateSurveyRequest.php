@@ -33,6 +33,7 @@ class CreateSurveyRequest extends FormRequest
             'tidak_diketahui'=>'nullable|numeric',
             'rw'=>'required|numeric',
             'tanggal_survey'=>'required',
+            'penduduk_rt'=>'nullable|numeric',
             
         ];
     }
