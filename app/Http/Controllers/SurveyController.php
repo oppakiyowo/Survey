@@ -19,7 +19,7 @@ class SurveyController extends Controller
     public function index()
     {
         return view('survey.index')->with('surveys',Survey::all());
-        $surveys = Survey::all();
+       
         
     }
 
@@ -55,6 +55,7 @@ class SurveyController extends Controller
             'ganda' => $request ->ganda,
             'rt' => $request ->rt, 
             'rw' => $request ->rw,
+            'penduduk_rt' =>$request ->penduduk_rt,
   
         ]);  
     
@@ -110,9 +111,11 @@ class SurveyController extends Controller
             'meninggal',
             'tidak_diketahui',
             'rw',
+            'penduduk_rt',
             'tanggal_survey',
             'village_id'=> $request->village,
             'surveyor_id' => $request->surveyor,
+
 
             ]);
                 
