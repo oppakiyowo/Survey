@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Survey;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home')
+        ->with('jumlah_rt', survey::all()->count())
+        ->with('pindah',  survey::all()->sum('pindah'))
+        ->with('meninggal',  survey::all()->sum('meninggal'))
+        ->with('ganda',  survey::all()->sum('ganda'))
+        ->with('tidak_diketahui',  survey::all()->sum('tidak_diketahui'))
+        ->with('penduduk_terverifikasi',  survey::all()->sum('penduduk_rt'));
+
+               
     }
 }
