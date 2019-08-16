@@ -31,6 +31,7 @@ class UpdateSurveyRequest extends FormRequest
             'meninggal'=>'nullable|numeric',
             'tidak_diketahui'=>'nullable|numeric',
             'rw'=>'required|numeric',
+            'penduduk_rt'=>'nullable|numeric',
             'tanggal_survey'=>'required',
             'village_id' => 'required',
             'surveyor_id' => 'required',

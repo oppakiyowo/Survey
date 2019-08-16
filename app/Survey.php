@@ -18,6 +18,7 @@ class Survey extends Model
         'ganda',
         'rt',
         'rw',
+        'penduduk_rt',
     ];
 
     public function Surveyor()

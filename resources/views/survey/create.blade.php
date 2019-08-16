@@ -65,6 +65,16 @@
                                                     <td><p class="text-danger">{{$message}}</p></td>
                                             @enderror
                                         </div>
+
+
+                                        <div class="form-group">
+                                            <label for="penduduk_rt">Jumlah Penduduk<span class="required-label">*</span></label>
+                                            <input type="number" name="penduduk_rt" class="form-control  @error('penduduk_rt') is-invalid @enderror" id="penduduk_rt">
+                                            <small id="penduduk_rt" class="form-text text-muted">ubah dengan jumalh penduduk yang di survey</small>
+                                            @error('penduduk_rt')
+                                                <td><p class="text-danger">{{$message}}</p></td>
+                                            @enderror
+                                    </div>
                                         
                                     </div>
                                     <div class="col-md-12 col-lg-6">	
