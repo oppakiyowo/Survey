@@ -3,9 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Survey extends Model
 {
+
+    protected $dates = [
+        'tanggal_survey'
+        
+    ];
 
     protected $fillable = [
         'user_id',
@@ -36,4 +42,16 @@ class Survey extends Model
         return $this->belongsTo(User::class); 
     } 
    
+    public function TanggalSurveyLabel ()
+    {
+        if( ! $this->tanggal_survey){
+            return '<button class="btn btn-warning btn-sm" disabled="disabled">Proses</button>';
+        }
+        elseif ($this->tanggal_survey && $this->tanggal_survey->isFuture()){
+            return '<button class="btn btn-info btn-sm" disabled="disabled">Schedule </button>';
+        }
+        else{
+            return '<button class="btn btn-success btn-sm" disabled="disabled">Selesai </button>';
+        }
+    }
 }

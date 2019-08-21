@@ -46,6 +46,7 @@
                                 <tr>                               
                                     <th>Nama Surveyor</th>
                                     <th>Tanggal Survey</th>
+                                    <th>Status</th>
                                     <th>Nama Kelurahan</th>
                                     <th width="3px">RT</th>
                                     <th width="3px" >RW</th>
@@ -61,7 +62,9 @@
                                 @foreach ($surveys as $survey)
                                 <tr>
                                     <td>{{$survey->surveyor->name}} </td>
-                                    <td>{{ date('d F Y', strtotime($survey->tanggal_survey ))}} </td>
+                                    <td>{{ date('d F Y', strtotime($survey->tanggal_survey ))}}
+                                    <td>{!! $survey->TanggalSurveyLabel() !!}
+                                    </td></td>
                                     <td>{{$survey->village->name }} </td>
                                     <td>{{$survey->rt}}</td>
                                     <td>{{$survey->rw}} </td>
