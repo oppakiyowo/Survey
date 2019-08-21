@@ -32,7 +32,7 @@ class UpdateSurveyRequest extends FormRequest
             'tidak_diketahui'=>'nullable|numeric',
             'rw'=>'required|numeric',
             'penduduk_rt'=>'nullable|numeric',
-            'tanggal_survey'=>'required',
+            'tanggal_survey'=>'nullable',
             'village_id' => 'required',
             'surveyor_id' => 'required',
         ];

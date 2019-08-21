@@ -32,7 +32,7 @@ class CreateSurveyRequest extends FormRequest
             'meninggal'=>'nullable|numeric',
             'tidak_diketahui'=>'nullable|numeric',
             'rw'=>'required|numeric',
-            'tanggal_survey'=>'required',
+            'tanggal_survey'=>'nullable',
             'penduduk_rt'=>'nullable|numeric',
             
         ];
