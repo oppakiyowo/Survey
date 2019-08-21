@@ -14,7 +14,7 @@ Home | Page
                         </div>
                         <div class="ml-md-auto py-2 py-md-0">
                             <a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>
-                            <a href="#" class="btn btn-secondary btn-round">Add Customer</a>
+                            <a href="#" class="btn btn-secondary btn-round">Tambah Data Survey</a>
                         </div>
                     </div>
                 </div>
@@ -50,10 +50,11 @@ Home | Page
                                         </tr>
                                     </tbody>
                                 </table>
+                                <div id="container" style="min-width: 1000px; height: 400px; margin: 0 auto"></div>   
                             </div>
                         </div>
                     </div>      
-                 <div id="container" style="min-width: 1000px; height: 400px; margin: 0 auto"></div>           
+                         
              </div>
          </div>
     </div>
@@ -89,10 +90,10 @@ Highcharts.chart('container', {
     type: 'column'
   },
   title: {
-    text: 'Monthly Average Rainfall'
+    text: 'Rekap Survey Kependudukan'
   },
   subtitle: {
-    text: 'Source: WorldClimate.com'
+    text: 'Kota Tanjungpinang'
   },
   xAxis: {
     categories: [
