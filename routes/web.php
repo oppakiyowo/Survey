@@ -11,18 +11,32 @@
 |
 */
 
+
 Route::get('/', function () {
     return redirect('/login');
 });
 Auth::routes(['register' => false]);
 
 
-Route::middleware(['auth'])->group(function() 
+
+
+Route::middleware(['auth'])->group(function()
 
  {
+
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/kel-dompak', 'HomeController@dompak')->name('dompak');
+    Route::get('/kel-batu-ix', 'HomeController@batu_ix')->name('batu_ix');
+
+
+    Route::get('/rekap-kel-dompak', 'RekapController@rekap_dompak')->name('rekap_dompak');
+
     Route::resource('surveyors', 'SurveyorController');
     Route::resource('villages', 'VillageController');
     Route::resource('surveys', 'SurveyController');
     Route::resource('users', 'UserController');
+    Route::get('/changepassword', 'UserController@changepassword')->name('users.changepassword');
+    Route::post('/changePassword','UserController@updatepassword')->name('updatepassword');
+
+
  });

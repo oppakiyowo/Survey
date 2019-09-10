@@ -34,8 +34,9 @@ Home | Page
                                             <th>Penduduk Terverifikasi</th>
                                             <th> Pindah</th>
                                             <th> Meninggal </th>
-                                            <th> Tidak Diketahui</th>
                                             <th> Ganda</th>
+                                            <th> Tidak Dikenal</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -45,21 +46,22 @@ Home | Page
                                             <td>{{ number_format( $penduduk_terverifikasi) }}</td>
                                             <td>{{$pindah}}</td>
                                             <td>{{$meninggal}}</td>
-                                            <td>{{$tidak_diketahui}}</td>
                                             <td>{{$ganda}}</td>
+                                            <td>{{$tidak_diketahui}}</td>
+
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div id="container" style="min-width: 1000px; height: 400px; margin: 0 auto"></div>   
+                                <div id="container" style="min-width: 1000px; height: 400px; margin: 0 auto"></div>
                             </div>
                         </div>
-                    </div>      
-                         
+                    </div>
+
              </div>
          </div>
     </div>
 </div>
-</div>                 
+</div>
 @endsection
 
 @section ('scripts')
@@ -78,7 +80,7 @@ buttons: [
 } );
 } );
         </script>
-        
+
 <script>
 
 function float2dollar(value){
@@ -98,8 +100,8 @@ Highcharts.chart('container', {
   xAxis: {
     categories: [
       'Data Survey Penduduk Kota Tanjungpinang',
-      
-      
+
+
     ],
     crosshair: true
   },
@@ -108,9 +110,9 @@ Highcharts.chart('container', {
     title: {
       text: 'Jiwa'
     }
-    
+
   },
-  
+
   tooltip: {
     headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
@@ -126,9 +128,9 @@ Highcharts.chart('container', {
     }
   },
   colors: [
-'#4572A7', 
-'#89A54E', 
-'#AA4643', 
+'#4572A7',
+'#89A54E',
+'#AA4643',
 
 
 ],
@@ -136,7 +138,7 @@ Highcharts.chart('container', {
   series: [{
     name: 'Total Penduduk',
     data: [275333],
-    
+
 
   }, {
     name: 'Data Terverifikasi',
