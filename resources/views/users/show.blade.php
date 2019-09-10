@@ -7,7 +7,7 @@
 @section ('content')
 
 <div class="main-panel">
-       
+
         <div class="content">
             <div class="page-inner">
                 <div class="page-header">
@@ -34,7 +34,8 @@
                 </div>
 
             </div>
-            
+            <div class="container">
+                <div class="row justify-content-center">
             <div class="col-md-8 col">
                 <div class="card card-profile">
                     <div class="card-header" style="background-image: url('../assets/img/blogpost.jpg')">
@@ -50,29 +51,31 @@
                     <div class="job">Frontend Developer</div>
                     <div class="desc">A man who hates loneliness</div>
                     <div class="social-media">
-                        <a class="btn btn-info btn-twitter btn-sm btn-link" href="#"> 
+                        <a class="btn btn-info btn-twitter btn-sm btn-link" href="#">
                             <span class="btn-label just-icon"><i class="flaticon-twitter"></i> </span>
                         </a>
-                        <a class="btn btn-danger btn-sm btn-link" rel="publisher" href="#"> 
-                            <span class="btn-label just-icon"><i class="flaticon-google-plus"></i> </span> 
+                        <a class="btn btn-danger btn-sm btn-link" rel="publisher" href="#">
+                            <span class="btn-label just-icon"><i class="flaticon-google-plus"></i> </span>
                         </a>
-                        <a class="btn btn-primary btn-sm btn-link" rel="publisher" href="#"> 
-                            <span class="btn-label just-icon"><i class="flaticon-facebook"></i> </span> 
+                        <a class="btn btn-primary btn-sm btn-link" rel="publisher" href="#">
+                            <span class="btn-label just-icon"><i class="flaticon-facebook"></i> </span>
                         </a>
-                        <a class="btn btn-danger btn-sm btn-link" rel="publisher" href="#"> 
-                            <span class="btn-label just-icon"><i class="flaticon-dribbble"></i> </span> 
+                        <a class="btn btn-danger btn-sm btn-link" rel="publisher" href="#">
+                            <span class="btn-label just-icon"><i class="flaticon-dribbble"></i> </span>
                         </a>
                     </div>
                     <div class="view-profile">
-                        <a href="#" class="btn btn-secondary btn-block">Change Password</a>
+                        <a href="#" class="btn btn-secondary btn-block">Change Profile</a>
                     </div>
+
+
                 </div>
             </div>
             <div class="card-footer">
                 <div class="row user-stats text-center">
                     <div class="col">
-                        <div class="number">125</div>
-                        <div class="title">Post</div>
+                        <div class="number">{{$user->surveys->count() }}</div>
+                        <div class="title">Rekap Survey</div>
                     </div>
                     <div class="col">
                         <div class="number">25K</div>
@@ -88,7 +91,8 @@
     </div>
     </div>
 </div>
-   
+        </div>
+
 
 
 @endsection
