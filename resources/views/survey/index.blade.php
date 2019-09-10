@@ -5,7 +5,7 @@
         <div class="content">
             <div class="page-inner">
                 <div class="page-header">
-        
+
                     <h4 class="page-title">DAFTAR HASIL SURVEY</h4>
                     <ul class="breadcrumbs">
                         <li class="nav-home">
@@ -27,7 +27,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
         <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -39,22 +39,22 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    
+
                     <div class="table-responsive">
                         <table id="add-row" class="display table table-striped table-hover">
                             <thead>
-                                <tr>                               
+                                <tr>
                                     <th>Nama Surveyor</th>
                                     <th>Tanggal Survey</th>
                                     <th>Status</th>
                                     <th>Nama Kelurahan</th>
                                     <th width="3px">RT</th>
                                     <th width="3px" >RW</th>
-                                    <th width="3px">Pindah</th>  
-                                    <th width="3px">Meninggal</th>  
-                                    <th width="3px">Ganda</th>  
-                                    <th width="3px">Tidak Diketahui</th>  
-                                    <th width="3px">Total</th>  
+                                    <th width="3px">Pindah</th>
+                                    <th width="3px">Meninggal</th>
+                                    <th width="3px">Ganda</th>
+                                    <th width="3px">Tidak Dikenal</th>
+                                    <th width="3px">Total</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -75,35 +75,34 @@
                                     <td> {{ $total = $survey->pindah + $survey->meninggal  + $survey->tidak_diketahui + $survey->ganda }}  </td>
                                     <td>
                                         <div class="form-button-action">
-                                                
+
                                                 <a href="{{ route('surveys.edit', $survey->id) }}"  data-toggle="tooltip"
                                                 class="btn btn-link btn-info" data-original-title="Edit">
                                                     <i class="fa fa-edit"></i></a>
-                                               
-                                                    
+
+
                                                 <button type="button" data-toggle="tooltip" title=""
                                                     class="btn btn-link btn-danger" data-original-title="Delete"
                                                     onclick="handleDelete( {{ $survey->id }} )">
                                                     <i class="fa fa-times"></i>
                                                 </button>
-                                            </div> 
+                                            </div>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th colspan="5">TOTAL ANOMALI</th>
+                                    <th colspan="6">TOTAL ANOMALI</th>
+
                                     <th> {{ number_format( $survey->sum('pindah')) }}</th>
                                     <th> {{ number_format( $survey->sum('meninggal')) }}</th>
-                                    <th> {{ number_format( $survey->sum('tidak_diketahui')) }}</th>
                                     <th> {{ number_format( $survey->sum('ganda')) }}</th>
+                                    <th> {{ number_format( $survey->sum('tidak_diketahui')) }}</th>
                                     <th> {{ $total_anomali= $survey->sum('pindah') +
-                                                              $survey->sum('meninggal') +
-                                                              $survey->sum('tidak_diketahui') +
-                                                                 $survey->sum('ganda') 
-
-                                    }}</th>
+                                                            $survey->sum('meninggal') +
+                                                            $survey->sum('tidak_diketahui') +
+                                                            $survey->sum('ganda') }}</th>
                                 </tr>
                                 </tfoot>
                         </table>
@@ -113,7 +112,7 @@
         </div>
     </div>
 </div>
-</div> 
+</div>
 
 {{-- script delete surveyor --}}
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
@@ -144,16 +143,16 @@
 </div>
 <!-- end delete Modal -->
 @endsection
-        
-        
+
+
 @section('scripts')
 
 <script>
 function handleDelete(id) {
-	
+
 	var form = document.getElementById('deleteSurveyForm')
 	form.action = '/surveys/' + id
-	
+
 	$('#deleteModal').modal('show')
 }
 </script>
