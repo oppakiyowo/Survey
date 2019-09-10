@@ -1,6 +1,6 @@
   <!-- Navbar Header -->
             <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
-			
+
                     <div class="container-fluid">
                         <div class="collapse" id="search-nav">
                             <form class="navbar-left navbar-form nav-search mr-md-3">
@@ -15,8 +15,8 @@
                             </form>
                         </div>
                         <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-                           
-                          
+
+
                             <li class="nav-item dropdown hidden-caret">
                                 <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
                                     <i class="fas fa-layer-group"></i>
@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                             </li>
-                            
+
                             <li class="nav-item dropdown hidden-caret">
                                 <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                                     <div class="avatar-sm">
@@ -80,7 +80,7 @@
                                 <ul class="dropdown-menu dropdown-user animated fadeIn">
                                     <div class="dropdown-user-scroll scrollbar-outer">
                                         <li>
-                                            
+
                                             <div class="user-box">
                                                 <div class="avatar-lg"><img src="{{ Gravatar::src(Auth::user()->email) }}" alt="image profile" class="avatar-img rounded"></div>
                                                 <div class="u-text">
@@ -91,7 +91,7 @@
                                         </li>
                                         <li>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">My Profile</a>
+                                            <a class="dropdown-item" href="/changepassword">Ubah Password</a>
                                             <a class="dropdown-item" href="#">My Balance</a>
                                             <a class="dropdown-item" href="#">Inbox</a>
                                             <div class="dropdown-divider"></div>
@@ -112,13 +112,12 @@
                         </ul>
                     </div>
                 </nav>
-                    
-                <!-- End Navbar -->
-                
-                   
-                    
-            </div>
-      
 
-                
-                
+                <!-- End Navbar -->
+
+
+
+            </div>
+
+
+
