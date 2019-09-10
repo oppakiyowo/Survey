@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<div class="sidebar">			
+<div class="sidebar">
         <div class="sidebar-wrapper scrollbar scrollbar-inner">
             <div class="sidebar-content">
                 <div class="user">
@@ -7,14 +7,14 @@
                         <img class="avatar-img rounded-circle" src="{{ Gravatar::src(Auth::user()->email) }}">
                     </div>
 
-               
+
                     <div class="info">
                         <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
-                                
+
                                     <h6 class="text-section" style="text-transform: uppercase;"> {{ Auth::user()->name }} </h6>
                                 <span class="user-level"> <h6 class="text-section" style="text-transform: uppercase;">Admin</h6></span>
-                                
+
                                 <span class="caret"></span>
                             </span>
                         </a>
@@ -52,7 +52,12 @@
                             <ul class="nav nav-collapse">
                                 <li>
                                     <a href="{{ ('/home') }}">
-                                        <span class="sub-item">Backend</span>
+                                        <span class="sub-item">Rekap Keselurahan</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('rekap_dompak')}}">
+                                        <span class="sub-item">Rekap Dompak</span>
                                     </a>
                                 </li>
                             </ul>
@@ -64,23 +69,30 @@
                         </span>
                         <h4 class="text-section">Menu Bar</h4>
                     </li>
-                    
+
                     <li class="nav-item">
-                        
+
                         <a data-toggle="collapse" href="#base">
                             <i class="fas fa-layer-group"></i>
-                            <p>Click Here</p>
+                            <p>Daftar Survey Kelurahan</p>
                             <span class="caret"></span>
                         </a>
                         <div class="collapse" id="base">
                             <ul class="nav nav-collapse">
                                 <li>
-                                    <a href="">
-                                        <span class="sub-item">Data Survei</span>
+                                    <a href={{route('batu_ix')}}>
+                                        <span class="sub-item">Kelurahan Batu IX</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href={{route('dompak')}}>
+                                        <span class="sub-item">Kelurahan Dompak</span>
                                     </a>
                                 </li>
                             </ul>
+
                         </div>
+
                         <li class="nav-item">
                                 <a href="/surveys">
                                 <i class="fas fa-copy"></i>
@@ -105,7 +117,7 @@
                                     <i class="fas fa-user"></i>
                                     <p>Data Pengguna</p>
                                 </a>
-                            </li>    
+                            </li>
                     </li>
                 </ul>
             </div>
@@ -114,4 +126,3 @@
 
     <!-- End Sidebar -->
 
-    
