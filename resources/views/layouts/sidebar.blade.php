@@ -56,9 +56,79 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="{{route('rekap_air_raja')}}">
+                                        <span class="sub-item">Rekap Air Raja</span>
+                                    </a>
+
+                                    <a href="{{route('rekap_batu_ix')}}">
+                                            <span class="sub-item">Rekap Batu IX</span>
+                                     </a>
+
+                                     <a href="{{route('rekap_bukit_cermin')}}">
+                                            <span class="sub-item">Rekap Bukit Cermin</span>
+                                    </a>
+
                                     <a href="{{route('rekap_dompak')}}">
                                         <span class="sub-item">Rekap Dompak</span>
                                     </a>
+
+                                    <a href="{{route('rekap_kamboja')}}">
+                                            <span class="sub-item">Rekap Kamboja</span>
+                                        </a>
+
+                                    <a href="{{route('rekap_kampung_baru')}}">
+                                            <span class="sub-item">Rekap kampung</span>
+                                        </a>
+
+                                    <a href="{{route('rekap_kampung_bugis')}}">
+                                            <span class="sub-item">Rekap Kampung Bugis</span>
+                                        </a>
+
+                                    <a href="{{route('rekap_kampung_bulang')}}">
+                                            <span class="sub-item">Rekap Kampung Bulang</span>
+                                        </a>
+
+                                    <a href="{{route('rekap_melayu_kota_piring')}}">
+                                            <span class="sub-item">Rekap Melayu Kota Piring</span>
+                                        </a>
+
+                                    <a href="{{route('rekap_penyengat')}}">
+                                            <span class="sub-item">Rekap Penyengat</span>
+                                        </a>
+
+                                    <a href="{{route('rekap_pinang_kencana')}}">
+                                            <span class="sub-item">Rekap Pinang Kencana</span>
+                                        </a>
+
+                                    <a href="{{route('rekap_sei_jang')}}">
+                                            <span class="sub-item">Rekap Sei Jang</span>
+                                        </a>
+
+                                    <a href="{{route('rekap_senggarang')}}">
+                                            <span class="sub-item">Rekap Senggarang</span>
+                                        </a>
+
+                                    <a href="{{route('rekap_tanjung_ayun_sakti')}}">
+                                            <span class="sub-item">Rekap Tanjung Ayun Sakti</span>
+                                        </a>
+
+                                    <a href="{{route('rekap_tanjung_pinang_barat')}}">
+                                            <span class="sub-item">Rekap Tanjung_pinang_barat</span>
+                                        </a>
+
+                                    <a href="{{route('rekap_tanjung_pinang_kota')}}">
+                                            <span class="sub-item">Rekap Tanjung Pinang Kota</span>
+                                        </a>
+
+                                    <a href="{{route('rekap_tanjung_pinang_timur')}}">
+                                            <span class="sub-item">Rekap Tanjung Pinang Timur</span>
+                                        </a>
+
+                                        <a href="{{route('rekap_tanjung_unggat')}}">
+                                                <span class="sub-item">Rekap Tanjung Unggat</span>
+                                            </a>
+
+
                                 </li>
                             </ul>
                         </div>
@@ -87,6 +157,11 @@
                                 <li>
                                     <a href={{route('dompak')}}>
                                         <span class="sub-item">Kelurahan Dompak</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href={{route('kp_bulang')}}>
+                                        <span class="sub-item">Kelurahan Kampung Bulang</span>
                                     </a>
                                 </li>
                             </ul>

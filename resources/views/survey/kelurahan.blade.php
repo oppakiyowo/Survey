@@ -17,7 +17,7 @@
                             <i class="flaticon-right-arrow"></i>
                         </li>
                         <li class="nav-item">
-                            <a href="/surveys">Table Survey Kelurahan Dompak</a>
+                            <a href="/surveys">Table Survey Kelurahan </a>
                         </li>
                         <li class="separator">
                             <i class="flaticon-right-arrow"></i>
@@ -54,7 +54,8 @@
                                     <th width="3px">Meninggal</th>
                                     <th width="3px">Ganda</th>
                                     <th width="3px">Tidak Dikenal</th>
-                                    <th width="3px">Total</th>
+                                    <th width="3px">Total Anomali</th>
+                                    <th width="3px">Total Penduduk</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -70,9 +71,10 @@
                                     <td>{{$survey->rw}} </td>
                                     <td> {{ $survey->pindah }} </td>
                                     <td> {{ $survey->meninggal }} </td>
-                                    <td> {{ $survey->tidak_diketahui }} </td>
                                     <td> {{ $survey->ganda }} </td>
+                                    <td> {{ $survey->tidak_diketahui }} </td>
                                     <td> {{ $total = $survey->pindah + $survey->meninggal  + $survey->tidak_diketahui + $survey->ganda }}  </td>
+                                    <td> {{ $survey->penduduk_rt }} </td>
                                     <td>
                                         <div class="form-button-action">
 
@@ -104,6 +106,10 @@
                                                             $ganda
 
                                     }}</th>
+
+                                    <th>{{ number_format( $penduduk_terverifikasi ) }}</th>
+
+
                                 </tr>
                                 </tfoot>
                         </table>

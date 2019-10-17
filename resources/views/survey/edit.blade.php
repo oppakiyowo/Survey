@@ -106,7 +106,7 @@
                                         <div class="form-group">
                                             <label for="tidak_diketahui">Tidak Dikenal</label>
                                             <input type="text" name="tidak_diketahui" class="form-control"
-                                                id="tidak_diketahui">
+                                                id="tidak_diketahui" value="{{ $survey->tidak_diketahui }}">
                                             <small id="tidak_diketahui" class="form-text text-muted">Isi dengan jumlah
                                                 penduduk tanpa keterangan/tidak dikenal/tidak ditemui.</small>
                                         </div>
