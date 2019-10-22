@@ -53,7 +53,9 @@ Route::middleware(['auth'])->group(function()
     Route::resource('surveyors', 'SurveyorController');
     Route::resource('villages', 'VillageController');
     Route::resource('surveys', 'SurveyController');
+    Route::resource('datasurveys', 'DatasurveysController');
     Route::resource('users', 'UserController');
+
     Route::get('/changepassword', 'UserController@changepassword')->name('users.changepassword');
     Route::post('/changePassword','UserController@updatepassword')->name('updatepassword');
 
