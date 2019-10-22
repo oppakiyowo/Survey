@@ -52,8 +52,8 @@
                                     <th width="3px" >RW</th>
                                     <th width="3px">Pindah</th>
                                     <th width="3px">Meninggal</th>
-                                    <th width="3px">Ganda</th>
                                     <th width="3px">Tidak Dikenal</th>
+                                    <th width="3px">Ganda</th>
                                     <th width="3px">Total</th>
                                     <th>Action</th>
                                 </tr>

@@ -95,11 +95,11 @@ Highcharts.chart('container', {
     text: 'Rekap Survey Kependudukan'
   },
   subtitle: {
-    text: 'Kelurahan Dompak'
+    text: 'Kelurahan Tanjung Timur'
   },
   xAxis: {
     categories: [
-      'Data Survey Penduduk Kelurahan Dompak',
+      'Data Survey Penduduk Kelurahan Tanjung Timur',
 
 
     ],

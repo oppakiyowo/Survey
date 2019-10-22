@@ -95,11 +95,11 @@ Highcharts.chart('container', {
     text: 'Rekap Survey Kependudukan'
   },
   subtitle: {
-    text: 'Kelurahan Melayu Kota Piring'
+  text: 'Kelurahan Melayu Kota Piring'
   },
   xAxis: {
     categories: [
-      'Data Survey Penduduk Kelurahan Melayu Kota Piring',
+    'Data Survey Penduduk Kelurahan Melayu Kota Piring',
 
 
     ],
