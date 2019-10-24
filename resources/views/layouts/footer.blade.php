@@ -4,25 +4,16 @@
             <nav class="pull-left">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.themekita.com">
-                            ThemeKita
+                        <a class="nav-link" href="https://sm-performa.co.id/">
+                            Sinergi Multi Performa
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Help
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Licenses
-                        </a>
-                    </li>
+
                 </ul>
             </nav>
             <div class="copyright ml-auto">
                 2019, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://Ceritakoding.com">Edo Lorenza</a>
-            </div>				
+            </div>
         </div>
  </footer>
 <!--   Core JS Files   -->
@@ -56,7 +47,7 @@
         enableTime: true,
         enableSeconds: true
         })
-    
+
         $(document).ready(function() {
             $('.tags-selector').select2();
         });
@@ -193,7 +184,7 @@ Circles.create({
             var action = '<td> <div class="form-button-action"> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
 
             $('#addRowButton').click(function() {
-                
+
             });
         });
     </script>

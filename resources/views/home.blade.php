@@ -13,8 +13,8 @@ Home | Page
                             <h5 class="text-white op-9 mb-2">Rekapitulasi Hasil Survey Kependudukan </h5>
                         </div>
                         <div class="ml-md-auto py-2 py-md-0">
-                            <a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>
-                            <a href="#" class="btn btn-secondary btn-round">Tambah Data Survey</a>
+                            <a href="{{ route('surveys.index') }}" class="btn btn-white btn-border btn-round mr-2">Manage</a>
+                            <a href="{{ route('surveys.create') }}" class="btn btn-secondary btn-round">Tambah Data Survey</a>
                         </div>
                     </div>
                 </div>

@@ -23,20 +23,11 @@
                         <div class="collapse in" id="collapseExample">
                             <ul class="nav">
                                 <li>
-                                    <a href="#">
-                                        <span class="link-collapse">My Profile</span>
+                                    <a href="/changepassword">
+                                        <span class="link-collapse">Ubah Password</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="link-collapse">Edit Profile</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#settings">
-                                        <span class="link-collapse">Settings</span>
-                                    </a>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -142,31 +133,7 @@
 
                     <li class="nav-item">
 
-                        <a data-toggle="collapse" href="#base">
-                            <i class="fas fa-layer-group"></i>
-                            <p>Daftar Survey Kelurahan</p>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="base">
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href={{route('batu_ix')}}>
-                                        <span class="sub-item">Kelurahan Batu IX</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={{route('dompak')}}>
-                                        <span class="sub-item">Kelurahan Dompak</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={{route('kp_bulang')}}>
-                                        <span class="sub-item">Kelurahan Kampung Bulang</span>
-                                    </a>
-                                </li>
-                            </ul>
 
-                        </div>
 
                             <li class="nav-item">
                                 <a href="/surveys">
