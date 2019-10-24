@@ -4,11 +4,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Login Page</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="{{ asset('assets/img/icon.ico') }}" type="image/x-icon"/>
+    <link rel="icon" href="{{ asset('assets/img/icon.png') }}" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
 	<script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
-	
+
 
 	<script>
 		WebFont.load({
@@ -29,8 +29,8 @@
 	@include ('partial.message')
 	<div class="wrapper wrapper-login wrapper-login-full p-0">
 		<div class="login-aside w-50 d-flex flex-column align-items-center justify-content-center text-center bg-secondary-gradient">
-			<h1 class="title fw-bold text-white mb-3">Survey</h1>
-			<p class="subtitle text-white op-7">Ayo bergabung dengan komunitas kami untuk masa depan yang lebih baik</p>
+			<h1 class="title fw-bold text-white mb-3"><img width="180px" height="250px" src="{{ asset('assets/img/logo-survey.png') }}" alt="navbar brand" class="navbar-brand"></h1>
+			<p class="subtitle text-white op-7">Rekapitulasi pendataan pada kegiatan peningkatan database tahun 2019 Disdukcapil Kota Tanjungpinang</p>
 		</div>
 		<div class="login-aside w-50 d-flex align-items-center justify-content-center bg-white">
 			<div class="container container-login container-transparent animated fadeIn">
@@ -77,11 +77,8 @@
 								{{ __('Login') }}
 							</button>
 					</div>
-				
-					<div class="login-account">
-						<span class="msg">Don't have an account yet ?</span>
-						<a href="/register" class="link">Sign Up</a>
-					</div>
+
+
 
 				</div>
 			</div>
@@ -113,7 +110,7 @@
 						<div class="col-md-6">
 							<button type="submit" class="btn btn-secondary w-100 fw-bold">Reset Password</button>
 						</div>
-						
+
 					</form>
 					</div>
 				</div>
