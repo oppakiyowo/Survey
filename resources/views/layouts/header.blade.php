@@ -9,7 +9,7 @@
 
 	<!-- Fonts and icons -->
 	<script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
-	
+
 
 	<script>
 		WebFont.load({
@@ -20,7 +20,7 @@
 			}
 		});
 	</script>
-	 
+
 	 <script src="{{ asset('assets/js/core/jquery.3.2.1.min.js') }}"></script>
 	 <link  href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 	 <script src="{{ asset('js/toastr.min.js') }}"></script>
@@ -37,9 +37,9 @@
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
-				
-				<a href="/home" class="logo">
-					<img src="{{ asset('assets/img/logo.svg') }}" alt="navbar brand" class="navbar-brand">
+
+				<a href="/home" class="logo" style="color:white">
+					<img width="60px" height="60px" src="{{ asset('assets/img/logo-survey.png') }}" alt="navbar brand" class="navbar-brand"> Survey
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
