@@ -74,14 +74,7 @@
                                             @enderror
                                         </div>
 
-                                        <div class="form-group">
-                                                <label for="penduduk_rt">Jumlah Penduduk<span class="required-label">*</span></label>
-                                                <input type="number" name="penduduk_rt" class="form-control  @error('penduduk_rt') is-invalid @enderror" id="penduduk_rt" value="{{ $survey->penduduk_rt }}">
-                                                <small id="penduduk_rt" class="form-text text-muted">ubah dengan jumalh penduduk yang di survey</small>
-                                                @error('penduduk_rt')
-                                                    <td><p class="text-danger">{{$message}}</p></td>
-                                                @enderror
-                                        </div>
+
 
                                     </div>
                                     <div class="col-md-12 col-lg-6">
@@ -98,12 +91,6 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="ganda">Ganda</label>
-                                            <input type="number" name="ganda" class="form-control" id="ganda" value="{{ $survey->ganda }}">
-                                            <small id="ganda" class="form-text text-muted">Isi dengan jumlah penduduk data ganda.</small>
-                                    </div>
-
-                                        <div class="form-group">
                                             <label for="tidak_diketahui">Tidak Dikenal</label>
                                             <input type="text" name="tidak_diketahui" class="form-control"
                                                 id="tidak_diketahui" value="{{ $survey->tidak_diketahui }}">
@@ -111,6 +98,21 @@
                                                 penduduk tanpa keterangan/tidak dikenal/tidak ditemui.</small>
                                         </div>
 
+
+                                        <div class="form-group">
+                                            <label for="ganda">Ganda</label>
+                                            <input type="number" name="ganda" class="form-control" id="ganda" value="{{ $survey->ganda }}">
+                                            <small id="ganda" class="form-text text-muted">Isi dengan jumlah penduduk data ganda.</small>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="penduduk_rt">Jumlah Penduduk<span class="required-label">*</span></label>
+                                            <input type="number" name="penduduk_rt" class="form-control  @error('penduduk_rt') is-invalid @enderror" id="penduduk_rt" value="{{ $survey->penduduk_rt }}">
+                                            <small id="penduduk_rt" class="form-text text-muted">ubah dengan jumalh penduduk yang di survey</small>
+                                            @error('penduduk_rt')
+                                                <td><p class="text-danger">{{$message}}</p></td>
+                                            @enderror
+                                    </div>
 
                                     </div>
                                 </div>

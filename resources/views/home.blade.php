@@ -9,7 +9,7 @@ Home | Page
                 <div class="page-inner py-5">
                     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                         <div>
-                            <h2 class="text-white pb-2 fw-bold">Dashboard</h2>
+                        <h2 class="text-white pb-2 fw-bold">Dashboard </h2>
                             <h5 class="text-white op-9 mb-2">Rekapitulasi Hasil Survey Kependudukan </h5>
                         </div>
                         <div class="ml-md-auto py-2 py-md-0">
@@ -29,6 +29,7 @@ Home | Page
                                 <table id="lala" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
+                                            <th width="10px">Jumlah Seluruh RT</th>
                                             <th width="10px">Jumlah RT Terverifikasi</th>
                                             <th>Jumlah Penduduk</th>
                                             <th>Penduduk Terverifikasi</th>
@@ -41,6 +42,7 @@ Home | Page
                                     </thead>
                                     <tbody>
                                         <tr>
+                                            <td>775</td>
                                             <td>{{ $jumlah_rt }}</td>
                                             <td>275.333</td>
                                             <td>{{ number_format( $penduduk_terverifikasi) }}</td>

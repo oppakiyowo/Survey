@@ -44,35 +44,34 @@
                         <table id="add-row" class="display table table-striped table-hover">
                             <thead>
                                 <tr>
+                                    <th width="3px">RT/RW</th>
                                     <th>Nama Surveyor</th>
                                     <th>Tanggal Survey</th>
-                                    <th>Status</th>
-                                    <th>Nama Kelurahan</th>
-                                    <th width="3px">RT</th>
-                                    <th width="3px" >RW</th>
                                     <th width="3px">Pindah</th>
                                     <th width="3px">Meninggal</th>
                                     <th width="3px">Tidak Dikenal</th>
                                     <th width="3px">Ganda</th>
-                                    <th width="3px">Total</th>
+                                    <th width="3px">Total Anomali</th>
+                                    <th width="3px">Jumlah Penduduk</th>
+                                    <th>Nama Kelurahan</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($surveys as $survey)
                                 <tr>
+                                    <td>{{$survey->rt}} / {{$survey->rw}}</td>
                                     <td>{{$survey->surveyor->name}} </td>
                                     <td>{{ date('d F Y', strtotime($survey->tanggal_survey ))}}
-                                    <td>{!! $survey->TanggalSurveyLabel() !!}
-                                    </td></td>
-                                    <td>{{$survey->village->name }} </td>
-                                    <td>{{$survey->rt}}</td>
-                                    <td>{{$survey->rw}} </td>
+                                    {{-- <td>{!! $survey->TanggalSurveyLabel() !!}</td> --}}
+
                                     <td> {{ $survey->pindah }} </td>
                                     <td> {{ $survey->meninggal }} </td>
                                     <td> {{ $survey->tidak_diketahui }} </td>
                                     <td> {{ $survey->ganda }} </td>
                                     <td> {{ $total = $survey->pindah + $survey->meninggal  + $survey->tidak_diketahui + $survey->ganda }}  </td>
+                                    <td> {{ $survey->penduduk_rt }} </td>
+                                    <td>{{$survey->village->name }} </td>
                                     <td>
                                         <div class="form-button-action">
 

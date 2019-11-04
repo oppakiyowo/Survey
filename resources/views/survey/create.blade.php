@@ -75,20 +75,7 @@
                                         </div>
 
 
-                                        <div class="form-group">
-                                            <label for="penduduk_rt">Jumlah Penduduk<span
-                                                    class="required-label">*</span></label>
-                                            <input type="number" name="penduduk_rt"
-                                                class="form-control  @error('penduduk_rt') is-invalid @enderror"
-                                                id="penduduk_rt">
-                                            <small id="penduduk_rt" class="form-text text-muted">ubah dengan jumalh
-                                                penduduk yang di survey</small>
-                                            @error('penduduk_rt')
-                                            <td>
-                                                <p class="text-danger">{{$message}}</p>
-                                            </td>
-                                            @enderror
-                                        </div>
+
 
                                     </div>
                                     <div class="col-md-12 col-lg-6">
@@ -106,6 +93,15 @@
                                                 yang meninggal.</small>
                                         </div>
 
+                                        <div class="form-group">
+                                            <label for="tidak_diketahui">Tidak Dikenal</label>
+                                            <input type="text" name="tidak_diketahui" class="form-control"
+                                                id="tidak_diketahui">
+                                            <small id="tidak_diketahui" class="form-text text-muted">Isi dengan jumlah
+                                                penduduk tanpa keterangan/tidak dikenal/tidak ditemui.</small>
+                                        </div>
+
+
                                          <div class="form-group">
                                             <label for="ganda">Ganda</label>
                                             <input type="text" name="ganda" class="form-control" id="ganda">
@@ -114,12 +110,21 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="tidak_diketahui">Tidak Dikenal</label>
-                                            <input type="text" name="tidak_diketahui" class="form-control"
-                                                id="tidak_diketahui">
-                                            <small id="tidak_diketahui" class="form-text text-muted">Isi dengan jumlah
-                                                penduduk tanpa keterangan/tidak dikenal/tidak ditemui.</small>
+                                            <label for="penduduk_rt">Jumlah Penduduk<span
+                                                    class="required-label">*</span></label>
+                                            <input type="number" name="penduduk_rt"
+                                                class="form-control  @error('penduduk_rt') is-invalid @enderror"
+                                                id="penduduk_rt">
+                                            <small id="penduduk_rt" class="form-text text-muted">ubah dengan jumalh
+                                                penduduk yang di survey</small>
+                                            @error('penduduk_rt')
+                                            <td>
+                                                <p class="text-danger">{{$message}}</p>
+                                            </td>
+                                            @enderror
                                         </div>
+
+
 
                                     </div>
                                 </div>
