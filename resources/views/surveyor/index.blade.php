@@ -5,7 +5,7 @@
         <div class="content">
             <div class="page-inner">
                 <div class="page-header">
-        
+
                     <h4 class="page-title">DAFTAR SURVEYORS</h4>
                     <ul class="breadcrumbs">
                         <li class="nav-home">
@@ -27,7 +27,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
         <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -49,11 +49,11 @@
                 <div class="modal-header no-bd">
                     <h5 class="modal-title">
                         <span class="fw-mediumbold">
-                        Tambah Data</span> 
+                        Tambah Data</span>
                         <span class="fw-light">
                             Surveyor
                         </span>
-                    </h5> 
+                    </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -65,12 +65,12 @@
                                 <label>Nama Surveyor</label>
                                 <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"  />
                             </div>
-                           
-    
+
+
                             <div class="form-group form-group-default">
                                 <label>Nomor Handphone</label>
                                 <input type ="integer" class="number @error('kontak') is-invalid @enderror" name="kontak" value="+62" />
-                            
+
                             </div>
                         </div>
                     </div>
@@ -94,38 +94,40 @@
                                     <th width="4px">NO</th>
                                     <th>Nama</th>
                                     <th>Kontak</th>
-                                    <th>Total Survey</th>
+                                    <th>RT Tersurvey</th>
+
                                     <th width="6px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @php $no = 1; @endphp
                                 @foreach($surveyors as $surveyor)
-                              
+
                                 <tr>
                                     <td> {{ $no++ }} </td>
-                                    <td> {{$surveyor->name}} </td>
+                                    <td> <a href="{{ route('surveyors.show', $surveyor->id) }}">  {{$surveyor->name}}</a> </td>
                                     <td><a href="https://api.whatsapp.com/send?phone={{$surveyor->kontak}}&text=Halo"> <i class="fab fa-whatsapp"> </i> +{{$surveyor->kontak}} </a> </td>
                                     <td> {{$surveyor->surveys->count() }}</td>
-                                    <td>  
+
+                                    <td>
                                         <div class="form-button-action">
-                                                <a href="#editSurveyor" 
-                                                    data-name="{{$surveyor->name}}" 
-                                                    data-kontak="{{$surveyor->kontak}}"  
-                                                    data-catid="{{$surveyor->id}}"  
+                                                <a href="#editSurveyor"
+                                                    data-name="{{$surveyor->name}}"
+                                                    data-kontak="{{$surveyor->kontak}}"
+                                                    data-catid="{{$surveyor->id}}"
                                                     data-toggle="modal"
-                                                >            
+                                                >
                                                 <button type="button" data-toggle="tooltip"
                                                 class="btn btn-link btn-info" data-original-title="Edit">
                                                     <i class="fa fa-edit"></i></button>
                                                 </a>
-                                                    
+
                                                 <button type="button" data-toggle="tooltip" title=""
                                                     class="btn btn-link btn-danger" data-original-title="Delete"
                                                     onclick="handleDelete( {{ $surveyor->id }} )">
                                                     <i class="fa fa-times"></i>
                                                 </button>
-                                            </div> 
+                                            </div>
                                     </td>
                                 </tr>
                                 {{-- edit modal --}}
@@ -138,7 +140,7 @@
             <div class="modal-header no-bd">
                 <h5 class="modal-title">
                     <span class="fw-mediumbold">
-                    New</span> 
+                    New</span>
                     <span class="fw-light">
                         Row
                     </span>
@@ -147,7 +149,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            
+
             <div class="modal-body">
                 <p class="small">Edit Data Surveyor</p>
                     <div class="row">
@@ -174,7 +176,7 @@
         </div>
     </div>
 </div>
-{{-- end of edit modal --}}  
+{{-- end of edit modal --}}
 <!-- delete Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
     aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -215,28 +217,28 @@
         </div>
     </div>
 </div>
-</div> 
+</div>
 
 
 
 @endsection
-        
+
 @section ('scripts')
 {{-- script edit surveyor --}}
 <script type="text/JavaScript">
     $(function () {
         $("#editSurveyor").on("show.bs.modal", function (event) {
-        
+
         var button = $(event.relatedTarget);
         var name = button.data("name");
         var kontak = button.data("kontak");
         var cat_id = button.data("catid");
         var modal = $(this);
-        
+
         modal.find('.modal-body #name').val(name);
         modal.find('.modal-body #kontak').val(kontak);
         modal.find('.modal-body #cat_id').val(cat_id);
-    
+
         });
     });
     </script>
@@ -249,10 +251,10 @@
                ($(this).val().length > 0) && ($(this).val().substr(0,3) != '+62')
                || ($(this).val() == '')
                ){
-               $(this).val('+62');    
+               $(this).val('+62');
            }
        });
-       
+
    </script>
 {{-- end otomatis field +62 untuk nomor telepon --}}
 
@@ -260,7 +262,7 @@
 <script type="text/JavaScript">
     $(function () {
       $("#addSurveyor").on("show.bs.modal", function (event) {
-       
+
     });
 });
 </script>
@@ -269,10 +271,10 @@
 {{-- script delete surveyor --}}
 <script>
         function handleDelete(id) {
-    
+
             var form = document.getElementById('deleteSurveyorForm')
             form.action = '/surveyors/' + id
-    
+
             $('#deleteModal').modal('show')
         }
     </script>
