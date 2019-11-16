@@ -19,8 +19,8 @@ class SurveyController extends Controller
     public function index()
     {
         return view('survey.index')->with('surveys',Survey::all());
-       
-        
+
+
     }
 
     /**
@@ -53,12 +53,12 @@ class SurveyController extends Controller
             'meninggal'=> $request ->meninggal,
             'tidak_diketahui' => $request ->tidak_diketahui,
             'ganda' => $request ->ganda,
-            'rt' => $request ->rt, 
+            'rt' => $request ->rt,
             'rw' => $request ->rw,
             'penduduk_rt' =>$request ->penduduk_rt,
-  
-        ]);  
-    
+
+        ]);
+
        session()->flash('success', 'Data Survey berhasil di tambahkan');
        return redirect(route('surveys.index'));
     }
@@ -71,7 +71,7 @@ class SurveyController extends Controller
      */
     public function show($id)
     {
-      
+
 
     }
 
@@ -102,7 +102,7 @@ class SurveyController extends Controller
     {
         $data=$request->only(
             [
-          
+
             'village',
             'surveyor',
             'rt',
@@ -118,7 +118,7 @@ class SurveyController extends Controller
 
 
             ]);
-                
+
             $survey->update($data);
             session()->flash('success', 'Data survey berhasil di ubah');
 

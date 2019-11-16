@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Surveyor;
+use App\Survey;
 use App\Http\Requests\surveyor\CreateSurveyorsRequest ;
 use App\Http\Requests\surveyor\UpdateSurveyorsRequest ;
 
@@ -16,7 +17,7 @@ class SurveyorController extends Controller
      */
     public function index()
     {
-        
+
         return view ('surveyor.index')->with('surveyors',Surveyor::all());
     }
 
@@ -38,7 +39,7 @@ class SurveyorController extends Controller
      */
     public function store(CreateSurveyorsRequest  $request)
     {
-       
+
         Surveyor::create([
             'name'=>$request->name,
             'kontak' => $request->kontak
@@ -56,7 +57,17 @@ class SurveyorController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $surveyor =Surveyor::find($id);
+        return view('surveyor.individu')
+        ->with('surveyor', $surveyor)
+
+        // ->with('jumlah_rt', survey::where('tanggal_survey', '>=' , date('2019-07-19'))->count())
+        ->with('pindah',  survey::all()->where('surveyor_id','=',$id )->sum('pindah'))
+        ->with('meninggal',  survey::all()->where('surveyor_id','=',$id )->sum('meninggal'))
+        ->with('ganda',  survey::all()->where('surveyor_id','=',$id )->sum('ganda'))
+        ->with('tidak_diketahui',  survey::all()->where('surveyor_id','=',$id )->sum('tidak_diketahui'))
+        ->with('penduduk_asli',  survey::all()->where('surveyor_id','=',$id )->sum('penduduk_rt'));
     }
 
     /**
@@ -81,7 +92,7 @@ class SurveyorController extends Controller
     {
         $surveyor=Surveyor::findOrFail($request->catid);
         $surveyor->update($request->all());
-       
+
         session()->flash('success', 'Data surveyor berhasil di ubah');
         return redirect(route('surveyors.index'));
     }
@@ -103,6 +114,6 @@ class SurveyorController extends Controller
 
         session()->flash('success', 'Data Surveyor Berhasil Di hapus');
         return redirect(route('surveyors.index'));
-    }        
-    
+    }
+
 }
