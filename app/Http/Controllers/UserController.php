@@ -7,6 +7,7 @@ use App\User;
 use App\Survey;
 use Auth;
 use App\Http\Requests\user\CreateUsersRequest;
+use App\Http\Requests\user\UpdateProfileRequest;
 use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
@@ -73,7 +74,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user =User::where('id', $id)->firstorFail();
+        return view('users.edit')->with('user', $user);
     }
 
     /**
@@ -83,9 +85,20 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function Update(UpdateProfileRequest $request, User $user)
     {
-        //
+        // $user =auth()->user(); hanya bisa di update  bagi yang login saja
+
+        $user->update([
+            'name' => $request->name,
+            'about'=> $request->about,
+            'password' => Hash::make($request->password),
+            'email'=> $request->email
+        ]);
+
+    session()->flash('success', 'Profile User berhasil di Update');
+    return redirect(route('users.index'));
+
     }
 
     /**
