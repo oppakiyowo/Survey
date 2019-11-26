@@ -44,7 +44,7 @@ Home | Page
                                         <tr>
                                             <td>775</td>
                                             <td>{{ $jumlah_rt }}</td>
-                                            <td>275.333</td>
+                                            <td>275.334</td>
                                             <td>{{ number_format( $penduduk_terverifikasi) }}</td>
                                             <td>{{$pindah}}</td>
                                             <td>{{$meninggal}}</td>

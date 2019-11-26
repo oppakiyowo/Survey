@@ -50,11 +50,9 @@
 					</div>
 					<div class="form-group">
 							<label for="password">{{ __('Password') }}</label>
-						@if (Route::has('password.request'))
-						<a class="link float-right link" href="#" id="show-signup" >
-							{{ __('Forgot Your Password?') }}
-						</a>
-					@endif
+
+
+
 						<div class="position-relative">
 							<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
@@ -83,38 +81,7 @@
 				</div>
 			</div>
 		</form>
-			<div class="container container-signup container-transparent animated fadeIn">
-				<h3 class="text-center">Reset Password</h3>
-				<div class="login-form">
-					<form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-					<div class="form-group">
-						<label for="email" class="placeholder"><b>Email Address</b></label>
-						<input  id="email" name="email" type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required autocomplete="email" autofocus required>
-							@error('email')
-							<span class="invalid-feedback" role="alert">
-								<strong>{{ $message }}</strong>
-							</span>
-							@enderror
-					</div>
-					<div class="row form-sub m-0">
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" name="agree" id="agree">
-							<label class="custom-control-label" for="agree">I Agree the terms and conditions.</label>
-						</div>
-					</div>
-					<div class="row form-action">
-						<div class="col-md-6">
-							<a href="#" id="show-signin" class="btn btn-danger btn-link w-100 fw-bold">Cancel</a>
-						</div>
-						<div class="col-md-6">
-							<button type="submit" class="btn btn-secondary w-100 fw-bold">Reset Password</button>
-						</div>
 
-					</form>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 	<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
