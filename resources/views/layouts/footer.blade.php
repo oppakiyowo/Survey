@@ -4,16 +4,14 @@
             <nav class="pull-left">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://sm-performa.co.id/">
+                        <a class="nav-link" target="_blank" href="https://sm-performa.co.id/">
                             Sinergi Multi Performa
                         </a>
                     </li>
 
                 </ul>
             </nav>
-            <div class="copyright ml-auto">
-                2019, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://Ceritakoding.com">Edo Lorenza</a>
-            </div>
+
         </div>
  </footer>
 <!--   Core JS Files   -->
